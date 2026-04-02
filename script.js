@@ -1,23 +1,74 @@
-// ===== INITIALIZE LUCIDE ICONS =====
+// ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
+    initTheme();
     initParticles();
     initNavigation();
     initScrollReveal();
     initSkillBars();
     initChartBars();
-    initCountUp();
     initContactForm();
 });
 
-// ===== NEURAL NETWORK PARTICLE BACKGROUND =====
+// ===== THEME TOGGLE =====
+function initTheme() {
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    
+    // Check saved preference or system preference
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+        html.setAttribute('data-theme', saved);
+    } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+    }
+    
+    toggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        
+        // Re-initialize lucide icons after theme change for the toggle icons
+        lucide.createIcons();
+        
+        // Update particle colors
+        if (window.updateParticleColors) {
+            window.updateParticleColors(next);
+        }
+    });
+    
+    // Listen for system preference changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+}
+
+// ===== PARTICLE BACKGROUND =====
 function initParticles() {
     const canvas = document.getElementById('neural-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
     let mouse = { x: null, y: null };
-    const PARTICLE_COUNT = 80;
-    const CONNECTION_DIST = 150;
+    const PARTICLE_COUNT = 60;
+    const CONNECTION_DIST = 130;
+    
+    // Theme-aware colors
+    const darkColors = ['232,168,56', '240,190,94', '196,136,32'];
+    const lightColors = ['196,136,32', '180,120,20', '160,110,21'];
+    let currentColors = document.documentElement.getAttribute('data-theme') === 'light' ? lightColors : darkColors;
+    
+    // Expose color update function
+    window.updateParticleColors = function(theme) {
+        currentColors = theme === 'light' ? lightColors : darkColors;
+        particles.forEach(p => {
+            p.color = currentColors[Math.floor(Math.random() * currentColors.length)];
+            p.alpha = theme === 'light' ? (Math.random() * 0.3 + 0.1) : (Math.random() * 0.4 + 0.15);
+        });
+    };
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -35,26 +86,25 @@ function initParticles() {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.radius = Math.random() * 2 + 1;
-            const colors = ['59,130,246', '34,211,238', '139,92,246'];
-            this.color = colors[Math.floor(Math.random() * colors.length)];
-            this.alpha = Math.random() * 0.5 + 0.2;
+            this.vx = (Math.random() - 0.5) * 0.4;
+            this.vy = (Math.random() - 0.5) * 0.4;
+            this.radius = Math.random() * 2 + 0.5;
+            this.color = currentColors[Math.floor(Math.random() * currentColors.length)];
+            const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+            this.alpha = isDark ? (Math.random() * 0.4 + 0.15) : (Math.random() * 0.3 + 0.1);
         }
         update() {
             this.x += this.vx;
             this.y += this.vy;
             if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
             if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            // Subtle mouse attraction
             if (mouse.x && mouse.y) {
                 const dx = mouse.x - this.x;
                 const dy = mouse.y - this.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 200) {
-                    this.x += dx * 0.002;
-                    this.y += dy * 0.002;
+                if (dist < 180) {
+                    this.x += dx * 0.0015;
+                    this.y += dy * 0.0015;
                 }
             }
         }
@@ -77,11 +127,11 @@ function initParticles() {
                 const dy = particles[i].y - particles[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < CONNECTION_DIST) {
-                    const opacity = (1 - dist / CONNECTION_DIST) * 0.15;
+                    const opacity = (1 - dist / CONNECTION_DIST) * 0.1;
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(59, 130, 246, ${opacity})`;
+                    ctx.strokeStyle = `rgba(232, 168, 56, ${opacity})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
@@ -189,32 +239,6 @@ function initChartBars() {
     }, { threshold: 0.3 });
 
     chartBars.forEach(bar => observer.observe(bar));
-}
-
-// ===== COUNT UP ANIMATION =====
-function initCountUp() {
-    const counters = document.querySelectorAll('.stat-number');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = parseInt(entry.target.dataset.count);
-                let current = 0;
-                const increment = target / 40;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        entry.target.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        entry.target.textContent = Math.floor(current);
-                    }
-                }, 30);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => observer.observe(counter));
 }
 
 // ===== CONTACT FORM =====

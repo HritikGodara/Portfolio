@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -33,15 +33,21 @@
                 <li><a href="#about" class="nav-link" data-section="about">About</a></li>
                 <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
                 <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-                <li><a href="#research" class="nav-link" data-section="research">Research</a></li>
+                <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
                 <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
                 <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+            <div class="nav-right">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i data-lucide="sun" class="icon-sun"></i>
+                    <i data-lucide="moon" class="icon-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -59,8 +65,9 @@
             <li><a href="#about" class="mobile-nav-link">About</a></li>
             <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
             <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-            <li><a href="#research" class="mobile-nav-link">Research</a></li>
+            <li><a href="#certifications" class="mobile-nav-link">Certifications</a></li>
             <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+            <li><a href="#hackathons" class="mobile-nav-link">Hackathons</a></li>
             <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
         </ul>
         <div class="mobile-menu-footer">
@@ -72,22 +79,42 @@
         </div>
     </div>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- ===== 1. INTRODUCTION & SUMMARY (HERO) ===== -->
     <section id="home" class="hero-section">
-        <div class="hero-container">
+        <div class="hero-frame">
+            <div class="hero-golden-panel"></div>
+
+            <div class="hero-asterisk animate-fade-up">✳</div>
+
+            <div class="hero-leaf leaf-1 animate-fade-up delay-3">
+                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.5-3 10-10m0-2c2-3.5 3-6 3-8 0-2-1-3-3-3s-3 1-3 3c0 2 .5 4.5 3 8z"/></svg>
+            </div>
+            <div class="hero-leaf leaf-2 animate-fade-up delay-4">
+                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.5-3 10-10m0-2c2-3.5 3-6 3-8 0-2-1-3-3-3s-3 1-3 3c0 2 .5 4.5 3 8z"/></svg>
+            </div>
+            <div class="hero-leaf leaf-3 animate-fade-up delay-5">
+                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.5-3 10-10m0-2c2-3.5 3-6 3-8 0-2-1-3-3-3s-3 1-3 3c0 2 .5 4.5 3 8z"/></svg>
+            </div>
+
+            <div class="hero-nav">
+                <a href="#projects">Work</a>
+                <a href="#about">About</a>
+                <a href="#contact">Hello</a>
+            </div>
+
+            <div class="hero-social">
+                <a href="https://github.com/HritikGodara" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/hritikgbishnoi/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+
             <div class="hero-content">
-                <div class="hero-badge animate-fade-up">
-                    <span class="badge-dot"></span>
-                    <span>Available for opportunities</span>
-                </div>
-                <h1 class="hero-title animate-fade-up delay-1">
-                    Hi, I'm <span class="gradient-text">Hritik</span>
+                <p class="hero-edition animate-fade-up">Introduction & Summary</p>
+                <h1 class="hero-name animate-fade-up delay-1">
+                    Hritik<span class="name-counter">(26)</span>
                 </h1>
-                <h2 class="hero-role animate-fade-up delay-2">
-                    AI / ML Engineer
-                </h2>
-                <p class="hero-tagline animate-fade-up delay-3">
-                    Building intelligent systems that bridge the gap between <span class="text-cyan">data</span> and <span class="text-purple">decisions</span>.
+                <p class="hero-role-tag animate-fade-up delay-2">AI / ML Engineer</p>
+                <p class="hero-description animate-fade-up delay-3">
+                    Computer Science undergraduate and AI/ML Engineer specializing in deep learning, computer vision, and NLP. Building intelligent systems that bridge the gap between data and decisions.
                 </p>
                 <div class="hero-cta animate-fade-up delay-4">
                     <a href="#projects" class="btn btn-primary">
@@ -99,70 +126,18 @@
                         Download Resume
                     </a>
                 </div>
-                <div class="hero-stats animate-fade-up delay-5">
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="3">0</span><span class="stat-suffix">+</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="2">0</span><span class="stat-suffix">+</span>
-                        <span class="stat-label">Certifications</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="99">0</span><span class="stat-suffix">%</span>
-                        <span class="stat-label">Model Accuracy</span>
-                    </div>
+            </div>
+
+            <div class="scroll-indicator animate-fade-up delay-5">
+                <div class="mouse">
+                    <div class="mouse-wheel"></div>
                 </div>
+                <span>Scroll to explore</span>
             </div>
-            <div class="hero-visual animate-fade-up delay-2">
-                <div class="hero-orbit-container">
-                    <div class="orbit-ring ring-1"></div>
-                    <div class="orbit-ring ring-2"></div>
-                    <div class="orbit-ring ring-3"></div>
-                    <div class="orbit-center">
-                        <div class="ai-brain-icon">
-                            <i data-lucide="brain"></i>
-                        </div>
-                    </div>
-                    <!-- Floating Tech Badges -->
-                    <div class="tech-badge badge-1" title="Python">
-                        <span>🐍</span>
-                        <span class="badge-label">Python</span>
-                    </div>
-                    <div class="tech-badge badge-2" title="TensorFlow">
-                        <span>🔶</span>
-                        <span class="badge-label">TensorFlow</span>
-                    </div>
-                    <div class="tech-badge badge-3" title="PyTorch">
-                        <span>🔥</span>
-                        <span class="badge-label">PyTorch</span>
-                    </div>
-                    <div class="tech-badge badge-4" title="Scikit-learn">
-                        <span>📊</span>
-                        <span class="badge-label">Scikit-learn</span>
-                    </div>
-                    <div class="tech-badge badge-5" title="HuggingFace">
-                        <span>🤗</span>
-                        <span class="badge-label">HuggingFace</span>
-                    </div>
-                    <div class="tech-badge badge-6" title="Docker">
-                        <span>🐳</span>
-                        <span class="badge-label">Docker</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator animate-fade-up delay-5">
-            <div class="mouse">
-                <div class="mouse-wheel"></div>
-            </div>
-            <span>Scroll to explore</span>
         </div>
     </section>
 
-    <!-- ===== ABOUT SECTION ===== -->
+    <!-- ===== 2. ABOUT ME ===== -->
     <section id="about" class="section about-section">
         <div class="container">
             <div class="section-header reveal">
@@ -180,7 +155,7 @@
                     </p>
                     <p>
                         From building a <strong>medicinal plant identification system</strong> with 99% accuracy using Vision Transformers 
-                        to developing polished Android applications, I thrive at the intersection of innovation and practical engineering. 
+                        to developing <strong>medical image analysis pipelines</strong> and <strong>legal AI systems</strong>, I thrive at the intersection of innovation and practical engineering. 
                         I'm an <strong>Oracle Certified Data Science Professional</strong> who believes in continuous learning and pushing 
                         boundaries.
                     </p>
@@ -223,21 +198,26 @@
                     <div class="about-card-stack">
                         <div class="info-card">
                             <div class="info-card-icon"><i data-lucide="graduation-cap"></i></div>
-                            <h4>B.Tech CSE</h4>
-                            <p>Lovely Professional University</p>
+                            <div>
+                                <h4>B.Tech CSE</h4>
+                                <p>Lovely Professional University</p>
+                            </div>
                         </div>
                         <div class="info-card">
                             <div class="info-card-icon"><i data-lucide="award"></i></div>
-                            <h4>Oracle Certified</h4>
-                            <p>Data Science Professional</p>
+                            <div>
+                                <h4>Oracle Certified</h4>
+                                <p>Data Science Professional</p>
+                            </div>
                         </div>
                         <div class="info-card">
                             <div class="info-card-icon"><i data-lucide="code-2"></i></div>
-                            <h4>Full-Stack Dev</h4>
-                            <p>Android + Web + ML</p>
+                            <div>
+                                <h4>Full-Stack AI</h4>
+                                <p>CV + NLP + ML Pipelines</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- Mini Accuracy Chart -->
                     <div class="mini-chart-card">
                         <h4><i data-lucide="bar-chart-3"></i> Model Performance</h4>
                         <div class="mini-chart">
@@ -266,161 +246,73 @@
         </div>
     </section>
 
-    <!-- ===== SKILLS SECTION ===== -->
+    <!-- ===== 3. SKILLS & TECHNOLOGIES ===== -->
     <section id="skills" class="section skills-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="cpu"></i> Skills & Tools</span>
+                <span class="section-tag"><i data-lucide="cpu"></i> Skills & Technologies</span>
                 <h2 class="section-title">My Technical <span class="gradient-text">Arsenal</span></h2>
                 <p class="section-subtitle">Technologies and tools I use to build intelligent solutions</p>
             </div>
-            <div class="skills-grid">
-                <!-- Programming Languages -->
-                <div class="skill-category reveal">
-                    <div class="skill-category-header">
-                        <i data-lucide="code"></i>
-                        <h3>Languages</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Python</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Java</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">C / C++</span>
-                                <span class="skill-percent">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="75" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">TypeScript</span>
-                                <span class="skill-percent">65%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="65" style="width: 0%;"></div>
-                            </div>
-                        </div>
+            <div class="skills-minimal-grid">
+                <!-- Languages -->
+                <div class="skill-group reveal">
+                    <h3 class="skill-group-title"><i data-lucide="code"></i> Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C / C++</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">SQL</span>
                     </div>
                 </div>
 
-                <!-- Frameworks -->
-                <div class="skill-category reveal">
-                    <div class="skill-category-header">
-                        <i data-lucide="layers"></i>
-                        <h3>Frameworks & Libraries</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">TensorFlow</span>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress cyan" data-width="85" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">PyTorch</span>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress cyan" data-width="85" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Scikit-learn</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress cyan" data-width="80" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Node.js</span>
-                                <span class="skill-percent">60%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress cyan" data-width="60" style="width: 0%;"></div>
-                            </div>
-                        </div>
+                <!-- Frameworks & Libraries -->
+                <div class="skill-group reveal">
+                    <h3 class="skill-group-title"><i data-lucide="layers"></i> Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">HuggingFace</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">LangChain</span>
                     </div>
                 </div>
 
-                <!-- Tools -->
-                <div class="skill-category reveal">
-                    <div class="skill-category-header">
-                        <i data-lucide="wrench"></i>
-                        <h3>Tools & Platforms</h3>
-                    </div>
-                    <div class="skill-bubbles">
-                        <span class="skill-bubble"><i data-lucide="github"></i> GitHub</span>
-                        <span class="skill-bubble"><i data-lucide="database"></i> MySQL</span>
-                        <span class="skill-bubble">🐳 Docker</span>
-                        <span class="skill-bubble">📓 Jupyter</span>
-                        <span class="skill-bubble">☁️ Google Colab</span>
-                        <span class="skill-bubble">🐍 Anaconda</span>
-                        <span class="skill-bubble">📊 Kaggle</span>
-                        <span class="skill-bubble"><i data-lucide="smartphone"></i> Android Studio</span>
-                        <span class="skill-bubble">🤗 Hugging Face</span>
-                        <span class="skill-bubble">🌊 Streamlit</span>
+                <!-- Tools & Platforms -->
+                <div class="skill-group reveal">
+                    <h3 class="skill-group-title"><i data-lucide="wrench"></i> Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">Google Colab</span>
+                        <span class="skill-tag">Kaggle</span>
+                        <span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">Hugging Face Spaces</span>
+                        <span class="skill-tag">MySQL</span>
                     </div>
                 </div>
 
                 <!-- Domains -->
-                <div class="skill-category reveal">
-                    <div class="skill-category-header">
-                        <i data-lucide="target"></i>
-                        <h3>Domains</h3>
-                    </div>
-                    <div class="domain-cards">
-                        <div class="domain-card">
-                            <div class="domain-icon"><i data-lucide="brain"></i></div>
-                            <h4>Deep Learning</h4>
-                            <p>CNNs, ViT, Transfer Learning</p>
-                        </div>
-                        <div class="domain-card">
-                            <div class="domain-icon"><i data-lucide="eye"></i></div>
-                            <h4>Computer Vision</h4>
-                            <p>Classification, Detection</p>
-                        </div>
-                        <div class="domain-card">
-                            <div class="domain-icon"><i data-lucide="message-circle"></i></div>
-                            <h4>NLP</h4>
-                            <p>Text Analysis, LLMs</p>
-                        </div>
-                        <div class="domain-card">
-                            <div class="domain-icon"><i data-lucide="bar-chart-2"></i></div>
-                            <h4>Data Science</h4>
-                            <p>Analysis, Visualization</p>
-                        </div>
+                <div class="skill-group reveal">
+                    <h3 class="skill-group-title"><i data-lucide="target"></i> Domains</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Natural Language Processing</span>
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">Medical AI</span>
+                        <span class="skill-tag">Legal AI</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== PROJECTS SECTION ===== -->
+    <!-- ===== 4. PROJECTS ===== -->
     <section id="projects" class="section projects-section">
         <div class="container">
             <div class="section-header reveal">
@@ -456,8 +348,8 @@
                                                 transform="rotate(-90 60 60)"/>
                                         <defs>
                                             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
-                                                <stop offset="0%" style="stop-color:#3B82F6"/>
-                                                <stop offset="100%" style="stop-color:#22D3EE"/>
+                                                <stop offset="0%" style="stop-color:#e8a838"/>
+                                                <stop offset="100%" style="stop-color:#f0be5e"/>
                                             </linearGradient>
                                         </defs>
                                     </svg>
@@ -482,7 +374,6 @@
                             <span class="tech-tag">ViT</span>
                             <span class="tech-tag">Hugging Face</span>
                             <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Scikit-learn</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/HritikGodara" target="_blank" rel="noopener" class="project-link">
@@ -495,147 +386,104 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Android Music Player -->
+                <!-- Project 2: Medical Image Analysis -->
                 <div class="project-card reveal">
                     <div class="project-visual">
-                        <div class="project-preview music-preview">
+                        <div class="project-preview medical-preview">
                             <div class="preview-graphic">
-                                <div class="music-player-ui">
-                                    <div class="music-album-art">
-                                        <div class="album-disc">
-                                            <div class="disc-center"></div>
-                                        </div>
+                                <div class="medical-viz">
+                                    <div class="scan-grid">
+                                        <div class="scan-item xray"><i data-lucide="scan"></i></div>
+                                        <div class="scan-item covid"><i data-lucide="shield-alert"></i></div>
+                                        <div class="scan-item brain"><i data-lucide="brain"></i></div>
                                     </div>
-                                    <div class="music-info">
-                                        <div class="music-title-bar">Now Playing</div>
-                                        <div class="waveform-bars">
-                                            <span></span><span></span><span></span><span></span><span></span>
-                                            <span></span><span></span><span></span><span></span><span></span>
-                                            <span></span><span></span><span></span><span></span><span></span>
+                                    <div class="scan-stats">
+                                        <div class="scan-stat">
+                                            <span class="scan-stat-value">90.8%</span>
+                                            <span class="scan-stat-label">X-Ray</span>
                                         </div>
-                                        <div class="music-controls">
-                                            <i data-lucide="skip-back"></i>
-                                            <i data-lucide="play-circle"></i>
-                                            <i data-lucide="skip-forward"></i>
+                                        <div class="scan-stat">
+                                            <span class="scan-stat-value">87%</span>
+                                            <span class="scan-stat-label">COVID</span>
+                                        </div>
+                                        <div class="scan-stat">
+                                            <span class="scan-stat-value">88.8%</span>
+                                            <span class="scan-stat-label">Brain</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="project-badge">🏥 Healthcare AI</div>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">Android Music Player</h3>
+                        <h3 class="project-title">Medical Image Analysis — AI for Healthcare</h3>
                         <p class="project-description">
-                            Developed a full-featured Android music player with <strong>ExoPlayer</strong> for high-performance audio playback. 
-                            Features a modern Material Design UI, interactive waveform seek bar, favorites management, 
-                            and album-art–based dynamic visuals with smooth navigation and shuffle/repeat controls.
+                            DenseNet121-based deep learning models for <strong>Chest X-ray</strong> classification (90.8% accuracy, 95% recall), 
+                            <strong>COVID-19 scan</strong> detection (87% across 4 classes), and <strong>Brain Tumor MRI</strong> analysis (88.8%). 
+                            Features Grad-CAM interpretability for clinical insights and exports models as .h5 and .pkl for deployment.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Android Studio</span>
-                            <span class="tech-tag">Material Design</span>
-                            <span class="tech-tag">ExoPlayer</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">DenseNet121</span>
+                            <span class="tech-tag">Grad-CAM</span>
+                            <span class="tech-tag">Kaggle</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/HritikGodara" target="_blank" rel="noopener" class="project-link">
+                            <a href="https://github.com/HritikGodara/Medical_image_analysis" target="_blank" rel="noopener" class="project-link">
                                 <i data-lucide="github"></i> GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3: Placeholder for future AI project -->
+                <!-- Project 3: Legal AI NLP -->
                 <div class="project-card reveal">
                     <div class="project-visual">
-                        <div class="project-preview data-preview">
+                        <div class="project-preview legal-preview">
                             <div class="preview-graphic">
-                                <div class="data-flow-viz">
-                                    <div class="data-node node-1"></div>
-                                    <div class="data-node node-2"></div>
-                                    <div class="data-node node-3"></div>
-                                    <div class="data-node node-4"></div>
-                                    <div class="data-node node-5"></div>
-                                    <svg class="data-connections" viewBox="0 0 200 150">
-                                        <line x1="30" y1="30" x2="100" y2="75" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
-                                        <line x1="170" y1="20" x2="100" y2="75" stroke="#22D3EE" stroke-width="1" opacity="0.5"/>
-                                        <line x1="100" y1="75" x2="50" y2="130" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
-                                        <line x1="100" y1="75" x2="160" y2="120" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
-                                    </svg>
+                                <div class="legal-viz">
+                                    <div class="legal-doc">
+                                        <div class="legal-doc-header">
+                                            <i data-lucide="file-text"></i>
+                                            <span>Legal Document</span>
+                                        </div>
+                                        <div class="legal-lines">
+                                            <div class="legal-line"></div>
+                                            <div class="legal-line highlight"></div>
+                                            <div class="legal-line"></div>
+                                            <div class="legal-line highlight"></div>
+                                            <div class="legal-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="legal-risk-badges">
+                                        <span class="risk-badge safe">✓ Safe</span>
+                                        <span class="risk-badge warning">⚠ Review</span>
+                                        <span class="risk-badge danger">✕ Risky</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="project-badge coming-soon">🚀 Coming Soon</div>
+                        <div class="project-badge">⚖️ Legal AI</div>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">AI-Powered Research Assistant</h3>
+                        <h3 class="project-title">Legal AI — Document Summarizer & Risk Classifier</h3>
                         <p class="project-description">
-                            An intelligent research assistant leveraging <strong>NLP and LLMs</strong> to summarize papers, 
-                            extract key insights, and generate literature reviews automatically. Designed for researchers and students 
-                            to accelerate knowledge discovery.
+                            Two ML models for Indian legal documents: one that <strong>summarizes court judgments and contracts</strong> 
+                            in plain language using FLAN-T5, and another that <strong>flags risky clauses</strong> before signing 
+                            using BERT-based classification. Designed to make legal documents accessible and actionable.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">LangChain</span>
                             <span class="tech-tag">HuggingFace</span>
-                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">FLAN-T5</span>
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">NLP</span>
                         </div>
                         <div class="project-links">
-                            <span class="project-link disabled">
-                                <i data-lucide="clock"></i> In Development
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== RESEARCH SECTION ===== -->
-    <section id="research" class="section research-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="book-open"></i> Research & Publications</span>
-                <h2 class="section-title">Academic <span class="gradient-text">Contributions</span></h2>
-                <p class="section-subtitle">Exploring the frontiers of AI through research and certifications</p>
-            </div>
-            <div class="research-grid">
-                <div class="research-card reveal">
-                    <div class="research-icon"><i data-lucide="file-text"></i></div>
-                    <div class="research-content">
-                        <span class="research-type">Certification</span>
-                        <h3>Oracle Cloud Infrastructure 2025 Certified Data Science Professional</h3>
-                        <p class="research-meta">
-                            <span><i data-lucide="building"></i> Oracle</span>
-                            <span><i data-lucide="calendar"></i> August 2025</span>
-                        </p>
-                        <p class="research-desc">Professional-level certification covering data science methodologies, ML model development, and deployment on Oracle Cloud Infrastructure.</p>
-                    </div>
-                </div>
-                <div class="research-card reveal">
-                    <div class="research-icon"><i data-lucide="file-text"></i></div>
-                    <div class="research-content">
-                        <span class="research-type">Certification</span>
-                        <h3>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
-                        <p class="research-meta">
-                            <span><i data-lucide="building"></i> Oracle</span>
-                            <span><i data-lucide="calendar"></i> August 2025</span>
-                        </p>
-                        <p class="research-desc">Foundational certification in AI concepts, machine learning fundamentals, and responsible AI practices within cloud environments.</p>
-                    </div>
-                </div>
-                <div class="research-card reveal">
-                    <div class="research-icon paper"><i data-lucide="microscope"></i></div>
-                    <div class="research-content">
-                        <span class="research-type">Research Project</span>
-                        <h3>AyurVision: Automated Medicinal Plant Identification using Vision Transformers</h3>
-                        <p class="research-meta">
-                            <span><i data-lucide="user"></i> Hritik Godara</span>
-                            <span><i data-lucide="calendar"></i> January 2026</span>
-                        </p>
-                        <p class="research-desc">Applied ViT architecture with transfer learning for fine-grained image classification of 40+ Ayurvedic plant species. Achieved 99% accuracy with comprehensive data augmentation pipeline.</p>
-                        <div class="research-links">
-                            <a href="https://github.com/HritikGodara" class="research-link" target="_blank" rel="noopener">
-                                <i data-lucide="github"></i> Code
+                            <a href="https://github.com/HritikGodara/legal_ai_nlp" target="_blank" rel="noopener" class="project-link">
+                                <i data-lucide="github"></i> GitHub
                             </a>
                         </div>
                     </div>
@@ -644,16 +492,50 @@
         </div>
     </section>
 
-    <!-- ===== EXPERIENCE / EDUCATION SECTION ===== -->
+    <!-- ===== 5. CERTIFICATIONS & COURSES ===== -->
+    <section id="certifications" class="section certifications-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><i data-lucide="award"></i> Certifications & Courses</span>
+                <h2 class="section-title">Professional <span class="gradient-text">Credentials</span></h2>
+                <p class="section-subtitle">Industry-recognized certifications validating my expertise</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i data-lucide="badge-check"></i></div>
+                    <div class="cert-content">
+                        <h3>Oracle Cloud Infrastructure 2025 Certified Data Science Professional</h3>
+                        <p class="cert-meta">
+                            <span><i data-lucide="building"></i> Oracle</span>
+                            <span><i data-lucide="calendar"></i> August 2025</span>
+                        </p>
+                        <p class="cert-desc">Professional-level certification covering data science methodologies, ML model development, and deployment on Oracle Cloud Infrastructure.</p>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i data-lucide="badge-check"></i></div>
+                    <div class="cert-content">
+                        <h3>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
+                        <p class="cert-meta">
+                            <span><i data-lucide="building"></i> Oracle</span>
+                            <span><i data-lucide="calendar"></i> August 2025</span>
+                        </p>
+                        <p class="cert-desc">Foundational certification in AI concepts, machine learning fundamentals, and responsible AI practices within cloud environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6. EXPERIENCE (INTERNSHIPS & WORK) ===== -->
     <section id="experience" class="section experience-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="briefcase"></i> Journey</span>
-                <h2 class="section-title">Experience & <span class="gradient-text">Education</span></h2>
+                <span class="section-tag"><i data-lucide="briefcase"></i> Experience (Internships & Work)</span>
+                <h2 class="section-title">Professional <span class="gradient-text">Journey</span></h2>
                 <p class="section-subtitle">My professional and academic milestones</p>
             </div>
             <div class="timeline">
-                <!-- Timeline Item 1 -->
                 <div class="timeline-item reveal" data-side="left">
                     <div class="timeline-dot">
                         <i data-lucide="graduation-cap"></i>
@@ -669,7 +551,6 @@
                     </div>
                 </div>
 
-                <!-- Timeline Item 2 -->
                 <div class="timeline-item reveal" data-side="right">
                     <div class="timeline-dot training">
                         <i data-lucide="code-2"></i>
@@ -685,40 +566,22 @@
                     </div>
                 </div>
 
-                <!-- Timeline Item 3 -->
                 <div class="timeline-item reveal" data-side="left">
-                    <div class="timeline-dot cert">
-                        <i data-lucide="award"></i>
-                    </div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">August 2025</span>
-                        <h3>Oracle Cloud Certifications</h3>
-                        <h4>Oracle</h4>
-                        <p>Earned dual certifications: OCI Data Science Professional and AI Foundations Associate, validating expertise in cloud-based ML and AI fundamentals.</p>
-                        <div class="timeline-tags">
-                            <span>Data Science</span><span>OCI</span><span>AI Foundations</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 4 -->
-                <div class="timeline-item reveal" data-side="right">
                     <div class="timeline-dot project">
                         <i data-lucide="rocket"></i>
                     </div>
                     <div class="timeline-card">
-                        <span class="timeline-date">January 2026</span>
-                        <h3>AyurVision — Research Project</h3>
+                        <span class="timeline-date">January 2026 – Present</span>
+                        <h3>AI/ML Research Projects</h3>
                         <h4>Independent Research</h4>
-                        <p>Developed and deployed an AI-powered medicinal plant identification system using Vision Transformers with 99% accuracy. Published on Hugging Face Spaces.</p>
+                        <p>Developed AyurVision (99% accuracy ViT plant classifier), Medical Image Analysis pipelines (DenseNet121), and Legal AI NLP systems for Indian court document summarization and clause risk classification.</p>
                         <div class="timeline-tags">
-                            <span>PyTorch</span><span>ViT</span><span>Streamlit</span><span>HuggingFace</span>
+                            <span>PyTorch</span><span>TensorFlow</span><span>HuggingFace</span><span>NLP</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Timeline Item 5 -->
-                <div class="timeline-item reveal" data-side="left">
+                <div class="timeline-item reveal" data-side="right">
                     <div class="timeline-dot school">
                         <i data-lucide="school"></i>
                     </div>
@@ -733,7 +596,43 @@
         </div>
     </section>
 
-    <!-- ===== CONTACT SECTION ===== -->
+    <!-- ===== 7. COMPETITIVE PROGRAMMING & HACKATHONS ===== -->
+    <section id="hackathons" class="section hackathons-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><i data-lucide="trophy"></i> Competitive Programming & Hackathons</span>
+                <h2 class="section-title">Competitions & <span class="gradient-text">Challenges</span></h2>
+                <p class="section-subtitle">Pushing boundaries through competitive problem solving</p>
+            </div>
+            <div class="hackathon-grid">
+                <div class="hackathon-card reveal">
+                    <div class="hackathon-icon"><i data-lucide="code-2"></i></div>
+                    <div>
+                        <h3>LPU Hackathon Participant</h3>
+                        <p>Active participation in university-level hackathons focused on AI/ML problem statements, building end-to-end solutions under time constraints.</p>
+                    </div>
+                </div>
+                <div class="hackathon-card reveal">
+                    <div class="hackathon-icon"><i data-lucide="bar-chart-2"></i></div>
+                    <div>
+                        <h3>Kaggle Competitions</h3>
+                        <p>Participation in Kaggle data science and ML competitions, applying deep learning and feature engineering techniques to real-world datasets.</p>
+                    </div>
+                </div>
+                <div class="hackathon-card reveal">
+                    <div class="hackathon-icon"><i data-lucide="terminal"></i></div>
+                    <div>
+                        <h3>Competitive Programming</h3>
+                        <p>Practice on platforms like LeetCode and GeeksforGeeks, focusing on data structures, algorithms, and problem-solving skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ===== 11. CONTACT SECTION ===== -->
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="section-header reveal">
@@ -748,13 +647,6 @@
                         <div>
                             <h4>Email</h4>
                             <a href="mailto:hritik.godara114@gmail.com">hritik.godara114@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-card">
-                        <i data-lucide="phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <a href="tel:+918168216904">+91-8168216904</a>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -804,6 +696,21 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 12. DOWNLOADABLE RESUME ===== -->
+    <section id="resume" class="section resume-section">
+        <div class="container">
+            <div class="resume-cta reveal">
+                <i data-lucide="file-down"></i>
+                <h2>Download My Resume</h2>
+                <p>Get a complete overview of my skills, experience, and projects in PDF format.</p>
+                <a href="PEV_301_CV_v1.pdf" download="Hritik_Godara_Resume.pdf" class="btn btn-primary">
+                    <i data-lucide="download"></i>
+                    Download Resume (PDF)
+                </a>
             </div>
         </div>
     </section>
