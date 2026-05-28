@@ -1,698 +1,476 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hritik | AI/ML Engineer Portfolio</title>
-    <meta name="description" content="Portfolio of Hritik — AI/ML Engineer specializing in deep learning, computer vision, NLP, and intelligent systems. Explore projects, research, and skills.">
-    <meta name="keywords" content="AI, ML, Machine Learning, Deep Learning, Portfolio, Hritik, Data Science, NLP, Computer Vision">
-    <meta name="author" content="Hritik">
+    <title>Hritik Godara | AI/ML Engineer</title>
+    <meta name="description" content="Portfolio of Hritik Godara — AI/ML Engineer building deep learning pipelines, computer vision systems, and NLP tools that work in the real world.">
+    <meta name="keywords" content="AI, ML, Machine Learning, Deep Learning, Portfolio, Hritik Godara, NLP, Computer Vision, Data Science">
+    <meta name="author" content="Hritik Godara">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Particle Canvas Background -->
-    <canvas id="neural-canvas"></canvas>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <span class="logo-bracket">&lt;</span>Hritik<span class="logo-bracket">/&gt;</span>
-            </a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-                <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
-                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-            </ul>
-            <div class="nav-right">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i data-lucide="sun" class="icon-sun"></i>
-                    <i data-lucide="moon" class="icon-moon"></i>
-                </button>
-                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
-        </div>
+    <!-- ===== FLOATING PILL NAV ===== -->
+    <nav class="pill-nav" id="pill-nav">
+        <span class="pill-name">Hritik</span>
+        <button class="pill-trigger" id="pill-trigger" aria-label="Open menu">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </button>
     </nav>
 
-    <!-- Mobile Slide-in Panel -->
-    <div class="mobile-menu-overlay" id="mobile-overlay"></div>
-    <div class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-header">
-            <span class="nav-logo"><span class="logo-bracket">&lt;</span>Hritik<span class="logo-bracket">/&gt;</span></span>
-            <button class="mobile-close" id="mobile-close" aria-label="Close menu">
-                <i data-lucide="x"></i>
-            </button>
-        </div>
-        <ul class="mobile-nav-links">
-            <li><a href="#home" class="mobile-nav-link">Home</a></li>
-            <li><a href="#about" class="mobile-nav-link">About</a></li>
-            <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
-            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-            <li><a href="#certifications" class="mobile-nav-link">Certifications</a></li>
-            <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
-            <li><a href="#hackathons" class="mobile-nav-link">Hackathons</a></li>
-            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    <!-- ===== NAV DROPDOWN MODAL ===== -->
+    <div class="nav-modal-overlay" id="nav-modal-overlay"></div>
+    <div class="nav-modal" id="nav-modal">
+        <button class="nav-modal-close" id="nav-modal-close" aria-label="Close menu">
+            <i data-lucide="x"></i>
+        </button>
+        <ul class="nav-modal-links">
+            <li><a href="#about" class="nav-modal-link">About Me</a></li>
+            <li><a href="#skills" class="nav-modal-link">Skills</a></li>
+            <li><a href="#projects" class="nav-modal-link">Projects</a></li>
+            <li><a href="#certifications" class="nav-modal-link">Certifications</a></li>
+            <li><a href="#experience" class="nav-modal-link">Experience</a></li>
+            <li><a href="#hackathons" class="nav-modal-link">Hackathons</a></li>
+            <li><a href="#contact" class="nav-modal-link">Contact</a></li>
         </ul>
-        <div class="mobile-menu-footer">
-            <div class="mobile-social">
-                <a href="https://github.com/HritikGodara" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
-                <a href="https://www.linkedin.com/in/hritikgbishnoi/" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
-                <a href="mailto:hritik.godara114@gmail.com"><i data-lucide="mail"></i></a>
-            </div>
+        <div class="nav-modal-footer">
+            <button class="theme-switch" id="theme-switch" aria-label="Toggle theme">
+                <i data-lucide="sun" class="icon-sun"></i>
+                <i data-lucide="moon" class="icon-moon"></i>
+                <span>Toggle Theme</span>
+            </button>
         </div>
     </div>
 
-    <!-- ===== 1. INTRODUCTION & SUMMARY (HERO) ===== -->
-    <section id="home" class="hero-section">
-        <div class="hero-frame">
-            <div class="hero-golden-panel"></div>
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero">
+        <div class="hero-deco hero-star">✳</div>
+        <div class="hero-deco hero-bolt">⚡</div>
 
-            <div class="hero-asterisk animate-fade-up">✳</div>
-
-            <div class="hero-leaf leaf-1 animate-fade-up delay-3">
-                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.5-3 10-10m0-2c2-3.5 3-6 3-8 0-2-1-3-3-3s-3 1-3 3c0 2 .5 4.5 3 8z"/></svg>
-            </div>
-            <div class="hero-leaf leaf-2 animate-fade-up delay-4">
-                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.5-3 10-10m0-2c2-3.5 3-6 3-8 0-2-1-3-3-3s-3 1-3 3c0 2 .5 4.5 3 8z"/></svg>
-            </div>
-            <div class="hero-leaf leaf-3 animate-fade-up delay-5">
-                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.5-3 10-10m0-2c2-3.5 3-6 3-8 0-2-1-3-3-3s-3 1-3 3c0 2 .5 4.5 3 8z"/></svg>
-            </div>
-
-            <div class="hero-nav">
-                <a href="#projects">Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Hello</a>
-            </div>
-
-            <div class="hero-social">
-                <a href="https://github.com/HritikGodara" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/hritikgbishnoi/" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-
-            <div class="hero-content">
-                <p class="hero-edition animate-fade-up">Introduction & Summary</p>
-                <h1 class="hero-name animate-fade-up delay-1">
-                    Hritik<span class="name-counter">(26)</span>
-                </h1>
-                <p class="hero-role-tag animate-fade-up delay-2">AI / ML Engineer</p>
-                <p class="hero-description animate-fade-up delay-3">
-                    Computer Science undergraduate and AI/ML Engineer specializing in deep learning, computer vision, and NLP. Building intelligent systems that bridge the gap between data and decisions.
-                </p>
-                <div class="hero-cta animate-fade-up delay-4">
-                    <a href="#projects" class="btn btn-primary">
-                        <i data-lucide="layers"></i>
-                        View Projects
-                    </a>
-                    <a href="PEV_301_CV_v1.pdf" download="Hritik_Godara_Resume.pdf" class="btn btn-outline">
-                        <i data-lucide="download"></i>
-                        Download Resume
-                    </a>
+        <div class="hero-center">
+            <h1 class="hero-title">
+                <span class="hero-line">AI/ML</span>
+                <span class="hero-line">ENGINEER</span>
+            </h1>
+            <!-- Portrait placeholder -->
+            <div class="hero-portrait">
+                <div class="portrait-placeholder">
+                    <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="120" height="160" rx="8" fill="currentColor" opacity="0.08"/>
+                        <circle cx="60" cy="55" r="25" fill="currentColor" opacity="0.15"/>
+                        <ellipse cx="60" cy="130" rx="35" ry="30" fill="currentColor" opacity="0.12"/>
+                    </svg>
                 </div>
             </div>
+        </div>
 
-            <div class="scroll-indicator animate-fade-up delay-5">
-                <div class="mouse">
-                    <div class="mouse-wheel"></div>
-                </div>
-                <span>Scroll to explore</span>
-            </div>
+        <div class="hero-bottom">
+            <span class="hero-bottom-left">&copy;2026 HRITIK</span>
+            <span class="hero-bottom-right">/ENGINEERING INTELLIGENCE</span>
         </div>
     </section>
 
-    <!-- ===== 2. ABOUT ME ===== -->
-    <section id="about" class="section about-section">
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="user"></i> About Me</span>
-                <h2 class="section-title">Turning Data Into <span class="gradient-text">Intelligence</span></h2>
-                <p class="section-subtitle">Passionate about building AI systems that solve real-world problems</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <p>
-                        I'm a <strong>Computer Science undergraduate</strong> at Lovely Professional University with a deep passion for 
-                        <span class="text-cyan">Artificial Intelligence</span> and <span class="text-purple">Machine Learning</span>. 
-                        My work spans across deep learning, computer vision, and NLP — where I focus on creating models that are 
-                        not just accurate, but meaningful.
+            <div class="about-layout">
+                <div class="about-col about-left">
+                    <h2 class="about-heading">Hey!</h2>
+                    <p class="about-text">
+                        I'm Hritik, a Computer Science undergrad at LPU with a stubborn focus on AI and ML.
+                        I spend most of my time training models, breaking pipelines, and figuring out why
+                        the loss function decided to plateau at 3 AM.
                     </p>
-                    <p>
-                        From building a <strong>medicinal plant identification system</strong> with 99% accuracy using Vision Transformers 
-                        to developing <strong>medical image analysis pipelines</strong> and <strong>legal AI systems</strong>, I thrive at the intersection of innovation and practical engineering. 
-                        I'm an <strong>Oracle Certified Data Science Professional</strong> who believes in continuous learning and pushing 
-                        boundaries.
+                </div>
+                <div class="about-col about-center">
+                    <div class="about-portrait">
+                        <div class="portrait-placeholder portrait-about">
+                            <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="200" height="280" rx="12" fill="currentColor" opacity="0.06"/>
+                                <circle cx="100" cy="95" r="40" fill="currentColor" opacity="0.12"/>
+                                <ellipse cx="100" cy="220" rx="55" ry="50" fill="currentColor" opacity="0.08"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-col about-right">
+                    <p class="about-text">
+                        I work across deep learning, computer vision, and NLP. I've built plant classifiers
+                        that hit 99% accuracy, medical imaging pipelines for X-ray and MRI diagnosis, and
+                        legal AI tools that actually read contracts so humans don't have to.
                     </p>
-                    <p>
-                        My goal is to contribute to research and industry projects that leverage AI to create positive impact — whether 
-                        it's healthcare, sustainability, or intelligent automation.
+                    <p class="about-text">
+                        Oracle Certified Data Science Professional. Currently shipping projects that sit at the
+                        intersection of healthcare, legal tech, and information retrieval.
                     </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i data-lucide="brain"></i>
-                            <div>
-                                <h4>Deep Learning</h4>
-                                <p>CNNs, Vision Transformers, Transfer Learning</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i data-lucide="eye"></i>
-                            <div>
-                                <h4>Computer Vision</h4>
-                                <p>Image Classification, Object Detection</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i data-lucide="message-square"></i>
-                            <div>
-                                <h4>NLP</h4>
-                                <p>Text Processing, Language Models</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i data-lucide="database"></i>
-                            <div>
-                                <h4>Data Science</h4>
-                                <p>Analysis, Visualization, Modeling</p>
-                            </div>
-                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SCROLL HIGHLIGHT TEXT ===== -->
+    <section class="scroll-highlight-section">
+        <div class="container">
+            <p class="scroll-highlight-text" id="scroll-highlight-text">
+                From data to intelligence. Clean, scalable ML pipelines built to solve healthcare, 
+                security, and document analysis challenges, driven by rigor, structured systems, 
+                and verified model accuracy.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <div class="skills-rows">
+                <div class="skills-row reveal">
+                    <h3 class="skills-row-title">Languages</h3>
+                    <div class="skills-row-tags">
+                        <span>Python</span><span class="tag-dot">&bull;</span>
+                        <span>Java</span><span class="tag-dot">&bull;</span>
+                        <span>C / C++</span><span class="tag-dot">&bull;</span>
+                        <span>TypeScript</span><span class="tag-dot">&bull;</span>
+                        <span>SQL</span>
                     </div>
                 </div>
-                <div class="about-visual reveal">
-                    <div class="about-card-stack">
-                        <div class="info-card">
-                            <div class="info-card-icon"><i data-lucide="graduation-cap"></i></div>
-                            <div>
-                                <h4>B.Tech CSE</h4>
-                                <p>Lovely Professional University</p>
-                            </div>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-card-icon"><i data-lucide="award"></i></div>
-                            <div>
-                                <h4>Oracle Certified</h4>
-                                <p>Data Science Professional</p>
-                            </div>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-card-icon"><i data-lucide="code-2"></i></div>
-                            <div>
-                                <h4>Full-Stack AI</h4>
-                                <p>CV + NLP + ML Pipelines</p>
-                            </div>
-                        </div>
+                <div class="skills-row reveal">
+                    <h3 class="skills-row-title">Frameworks & Libraries</h3>
+                    <div class="skills-row-tags">
+                        <span>TensorFlow</span><span class="tag-dot">&bull;</span>
+                        <span>PyTorch</span><span class="tag-dot">&bull;</span>
+                        <span>Scikit-learn</span><span class="tag-dot">&bull;</span>
+                        <span>HuggingFace</span><span class="tag-dot">&bull;</span>
+                        <span>Keras</span><span class="tag-dot">&bull;</span>
+                        <span>OpenCV</span><span class="tag-dot">&bull;</span>
+                        <span>LangChain</span>
                     </div>
-                    <div class="mini-chart-card">
-                        <h4><i data-lucide="bar-chart-3"></i> Model Performance</h4>
-                        <div class="mini-chart">
-                            <div class="chart-bar" data-height="92" data-label="ResNet">
-                                <div class="bar-fill" style="height: 0%;">
-                                    <span class="bar-value">92%</span>
-                                </div>
-                                <span class="bar-label">ResNet</span>
-                            </div>
-                            <div class="chart-bar" data-height="95" data-label="EfficientNet">
-                                <div class="bar-fill" style="height: 0%;">
-                                    <span class="bar-value">95%</span>
-                                </div>
-                                <span class="bar-label">EfficientNet</span>
-                            </div>
-                            <div class="chart-bar" data-height="99" data-label="ViT">
-                                <div class="bar-fill highlight-bar" style="height: 0%;">
-                                    <span class="bar-value">99%</span>
-                                </div>
-                                <span class="bar-label">ViT</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="skills-row reveal">
+                    <h3 class="skills-row-title">Tools & Platforms</h3>
+                    <div class="skills-row-tags">
+                        <span>GitHub</span><span class="tag-dot">&bull;</span>
+                        <span>Docker</span><span class="tag-dot">&bull;</span>
+                        <span>Jupyter</span><span class="tag-dot">&bull;</span>
+                        <span>Google Colab</span><span class="tag-dot">&bull;</span>
+                        <span>Kaggle</span><span class="tag-dot">&bull;</span>
+                        <span>Streamlit</span><span class="tag-dot">&bull;</span>
+                        <span>HF Spaces</span>
+                    </div>
+                </div>
+                <div class="skills-row reveal">
+                    <h3 class="skills-row-title">Domains</h3>
+                    <div class="skills-row-tags">
+                        <span>Deep Learning</span><span class="tag-dot">&bull;</span>
+                        <span>Computer Vision</span><span class="tag-dot">&bull;</span>
+                        <span>NLP</span><span class="tag-dot">&bull;</span>
+                        <span>Data Science</span><span class="tag-dot">&bull;</span>
+                        <span>Medical AI</span><span class="tag-dot">&bull;</span>
+                        <span>Legal AI</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 3. SKILLS & TECHNOLOGIES ===== -->
-    <section id="skills" class="section skills-section">
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="cpu"></i> Skills & Technologies</span>
-                <h2 class="section-title">My Technical <span class="gradient-text">Arsenal</span></h2>
-                <p class="section-subtitle">Technologies and tools I use to build intelligent solutions</p>
+            <div class="projects-header reveal">
+                <h2 class="projects-heading">Projects</h2>
+                <a href="https://github.com/HritikGodara" target="_blank" rel="noopener" class="view-all-link">
+                    View All Work <i data-lucide="arrow-up-right"></i>
+                </a>
             </div>
-            <div class="skills-minimal-grid">
-                <!-- Languages -->
-                <div class="skill-group reveal">
-                    <h3 class="skill-group-title"><i data-lucide="code"></i> Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">C / C++</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">SQL</span>
-                    </div>
-                </div>
+            <div class="projects-grid-2col">
 
-                <!-- Frameworks & Libraries -->
-                <div class="skill-group reveal">
-                    <h3 class="skill-group-title"><i data-lucide="layers"></i> Frameworks & Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">HuggingFace</span>
-                        <span class="skill-tag">Keras</span>
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">LangChain</span>
+                <!-- 1. AyurVision / IDMP -->
+                <a href="https://github.com/HritikGodara/IDMP_UL_ML" target="_blank" rel="noopener" class="project-card-v2 reveal">
+                    <div class="pcard-visual pcard-green">
+                        <div class="pcard-icon-grid">
+                            <div class="pcard-icon-cell"><i data-lucide="leaf"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="scan"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="check-circle"></i></div>
+                        </div>
+                        <div class="pcard-stat">99% Accuracy</div>
                     </div>
-                </div>
+                    <div class="pcard-info">
+                        <span class="pcard-label">AyurVision &bull; Computer Vision</span>
+                        <p class="pcard-desc">Medicinal plant identification using Vision Transformers. Classifies 40+ Indian species with 99% validation accuracy, deployed on Hugging Face Spaces.</p>
+                        <div class="pcard-tech">
+                            <span>Python</span><span>PyTorch</span><span>ViT</span><span>Streamlit</span>
+                        </div>
+                    </div>
+                </a>
 
-                <!-- Tools & Platforms -->
-                <div class="skill-group reveal">
-                    <h3 class="skill-group-title"><i data-lucide="wrench"></i> Tools & Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">Google Colab</span>
-                        <span class="skill-tag">Kaggle</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">Hugging Face Spaces</span>
-                        <span class="skill-tag">MySQL</span>
+                <!-- 2. Medical Image Analysis -->
+                <a href="https://github.com/HritikGodara/Medical_image_analysis" target="_blank" rel="noopener" class="project-card-v2 reveal">
+                    <div class="pcard-visual pcard-teal">
+                        <div class="pcard-icon-grid">
+                            <div class="pcard-icon-cell"><i data-lucide="heart-pulse"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="brain"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="shield-alert"></i></div>
+                        </div>
+                        <div class="pcard-stat">90.8% X-Ray</div>
                     </div>
-                </div>
+                    <div class="pcard-info">
+                        <span class="pcard-label">Medical Image Analysis &bull; Healthcare AI</span>
+                        <p class="pcard-desc">DenseNet121 pipelines for Chest X-ray, COVID-19 scan, and Brain Tumor MRI classification. Grad-CAM interpretability for clinical trust.</p>
+                        <div class="pcard-tech">
+                            <span>TensorFlow</span><span>DenseNet121</span><span>Grad-CAM</span><span>Kaggle</span>
+                        </div>
+                    </div>
+                </a>
 
-                <!-- Domains -->
-                <div class="skill-group reveal">
-                    <h3 class="skill-group-title"><i data-lucide="target"></i> Domains</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">Natural Language Processing</span>
-                        <span class="skill-tag">Data Science</span>
-                        <span class="skill-tag">Medical AI</span>
-                        <span class="skill-tag">Legal AI</span>
+                <!-- 3. Legal AI NLP -->
+                <a href="https://github.com/HritikGodara/legal_ai_nlp" target="_blank" rel="noopener" class="project-card-v2 reveal">
+                    <div class="pcard-visual pcard-amber">
+                        <div class="pcard-icon-grid">
+                            <div class="pcard-icon-cell"><i data-lucide="file-text"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="scale"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="alert-triangle"></i></div>
+                        </div>
+                        <div class="pcard-stat">FLAN-T5 + BERT</div>
                     </div>
-                </div>
+                    <div class="pcard-info">
+                        <span class="pcard-label">Legal AI &bull; NLP</span>
+                        <p class="pcard-desc">Summarizes Indian court judgments in plain language using FLAN-T5. Flags risky clauses in contracts using BERT classification before signing.</p>
+                        <div class="pcard-tech">
+                            <span>HuggingFace</span><span>FLAN-T5</span><span>BERT</span><span>NLP</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 4. RagGPT -->
+                <a href="https://github.com/HritikGodara/RagGPT" target="_blank" rel="noopener" class="project-card-v2 reveal">
+                    <div class="pcard-visual pcard-purple">
+                        <div class="pcard-icon-grid">
+                            <div class="pcard-icon-cell"><i data-lucide="database"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="search"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="message-square"></i></div>
+                        </div>
+                        <div class="pcard-stat">RAG Pipeline</div>
+                    </div>
+                    <div class="pcard-info">
+                        <span class="pcard-label">RagGPT &bull; Information Retrieval</span>
+                        <p class="pcard-desc">Retrieval-Augmented Generation pipeline for grounded question answering over private documents. Chunks, embeds, retrieves, and generates answers with source citations.</p>
+                        <div class="pcard-tech">
+                            <span>LangChain</span><span>OpenAI</span><span>FAISS</span><span>Python</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 5. AI Resume Builder -->
+                <a href="https://github.com/HritikGodara/ai-resume-builder" target="_blank" rel="noopener" class="project-card-v2 reveal">
+                    <div class="pcard-visual pcard-blue">
+                        <div class="pcard-icon-grid">
+                            <div class="pcard-icon-cell"><i data-lucide="file-badge"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="sparkles"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="target"></i></div>
+                        </div>
+                        <div class="pcard-stat">LLM Matching</div>
+                    </div>
+                    <div class="pcard-info">
+                        <span class="pcard-label">AI Resume Builder &bull; NLP</span>
+                        <p class="pcard-desc">Automated resume optimization and job description matching using contextual embeddings and transformer models for semantic alignment scoring.</p>
+                        <div class="pcard-tech">
+                            <span>Python</span><span>Transformers</span><span>Embeddings</span><span>Streamlit</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 6. Fraud Detection -->
+                <a href="https://github.com/HritikGodara/int396-fraud-detection" target="_blank" rel="noopener" class="project-card-v2 reveal">
+                    <div class="pcard-visual pcard-red">
+                        <div class="pcard-icon-grid">
+                            <div class="pcard-icon-cell"><i data-lucide="shield-check"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="trending-up"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="alert-circle"></i></div>
+                        </div>
+                        <div class="pcard-stat">Anomaly Detection</div>
+                    </div>
+                    <div class="pcard-info">
+                        <span class="pcard-label">Fraud Detection &bull; Security ML</span>
+                        <p class="pcard-desc">Transaction risk profiling and anomaly detection using ensemble ML models. Handles class imbalance with SMOTE and evaluates on precision-recall tradeoffs.</p>
+                        <div class="pcard-tech">
+                            <span>Scikit-learn</span><span>XGBoost</span><span>SMOTE</span><span>Python</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7. Flashcard Engine -->
+                <a href="https://github.com/HritikGodara/Flashcard_engine" target="_blank" rel="noopener" class="project-card-v2 reveal">
+                    <div class="pcard-visual pcard-cyan">
+                        <div class="pcard-icon-grid">
+                            <div class="pcard-icon-cell"><i data-lucide="layers"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="brain"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="rotate-ccw"></i></div>
+                        </div>
+                        <div class="pcard-stat">Spaced Repetition</div>
+                    </div>
+                    <div class="pcard-info">
+                        <span class="pcard-label">Flashcard Engine &bull; EdTech</span>
+                        <p class="pcard-desc">Active recall learning engine with spaced repetition scheduling. Automates deck generation and tracks retention curves for optimized study sessions.</p>
+                        <div class="pcard-tech">
+                            <span>Python</span><span>Flask</span><span>SQLite</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 8. IDMP UL ML (Unsupervised) -->
+                <a href="https://github.com/HritikGodara/IDMP_UL_ML" target="_blank" rel="noopener" class="project-card-v2 reveal">
+                    <div class="pcard-visual pcard-slate">
+                        <div class="pcard-icon-grid">
+                            <div class="pcard-icon-cell"><i data-lucide="scatter-chart"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="git-branch"></i></div>
+                            <div class="pcard-icon-cell"><i data-lucide="box"></i></div>
+                        </div>
+                        <div class="pcard-stat">Clustering + PCA</div>
+                    </div>
+                    <div class="pcard-info">
+                        <span class="pcard-label">IDMP &bull; Unsupervised ML</span>
+                        <p class="pcard-desc">Dimensionality reduction and clustering pipeline for medicinal plant feature analysis. Uses PCA, K-Means, and hierarchical clustering on extracted image features.</p>
+                        <div class="pcard-tech">
+                            <span>Scikit-learn</span><span>PCA</span><span>K-Means</span><span>Matplotlib</span>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== 4. PROJECTS ===== -->
-    <section id="projects" class="section projects-section">
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section id="certifications" class="section section-alt">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="folder-open"></i> Projects</span>
-                <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
-                <p class="section-subtitle">Real-world AI/ML projects showcasing problem-solving and technical depth</p>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1: AyurVision -->
-                <div class="project-card featured reveal">
-                    <div class="project-visual">
-                        <div class="project-preview ayurvision-preview">
-                            <div class="preview-graphic">
-                                <div class="confusion-matrix">
-                                    <div class="matrix-title">Classification Results</div>
-                                    <div class="matrix-grid">
-                                        <div class="matrix-cell high">98</div>
-                                        <div class="matrix-cell low">1</div>
-                                        <div class="matrix-cell low">0</div>
-                                        <div class="matrix-cell low">1</div>
-                                        <div class="matrix-cell high">99</div>
-                                        <div class="matrix-cell low">0</div>
-                                        <div class="matrix-cell low">0</div>
-                                        <div class="matrix-cell low">1</div>
-                                        <div class="matrix-cell high">99</div>
-                                    </div>
-                                </div>
-                                <div class="accuracy-badge">
-                                    <svg viewBox="0 0 120 120" class="accuracy-ring">
-                                        <circle cx="60" cy="60" r="52" stroke="#1E293B" stroke-width="8" fill="none"/>
-                                        <circle cx="60" cy="60" r="52" stroke="url(#grad1)" stroke-width="8" fill="none" 
-                                                stroke-dasharray="327" stroke-dashoffset="3" stroke-linecap="round"
-                                                transform="rotate(-90 60 60)"/>
-                                        <defs>
-                                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
-                                                <stop offset="0%" style="stop-color:#e8a838"/>
-                                                <stop offset="100%" style="stop-color:#f0be5e"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                    <span class="accuracy-text">99%</span>
-                                    <span class="accuracy-label">Accuracy</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-badge">🌿 Featured</div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">AyurVision — Medicinal Plant Identifier</h3>
-                        <p class="project-description">
-                            Built an automated image classification system to accurately identify <strong>40+ Indian medicinal plants</strong> 
-                            to combat adulteration in the Ayurvedic supply chain. Achieved <strong>~99% validation accuracy</strong> 
-                            using fine-tuned Vision Transformer (ViT) architecture. Deployed as an interactive Streamlit web app 
-                            on Hugging Face Spaces.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">ViT</span>
-                            <span class="tech-tag">Hugging Face</span>
-                            <span class="tech-tag">Streamlit</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/HritikGodara" target="_blank" rel="noopener" class="project-link">
-                                <i data-lucide="github"></i> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <i data-lucide="external-link"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Medical Image Analysis -->
-                <div class="project-card reveal">
-                    <div class="project-visual">
-                        <div class="project-preview medical-preview">
-                            <div class="preview-graphic">
-                                <div class="medical-viz">
-                                    <div class="scan-grid">
-                                        <div class="scan-item xray"><i data-lucide="scan"></i></div>
-                                        <div class="scan-item covid"><i data-lucide="shield-alert"></i></div>
-                                        <div class="scan-item brain"><i data-lucide="brain"></i></div>
-                                    </div>
-                                    <div class="scan-stats">
-                                        <div class="scan-stat">
-                                            <span class="scan-stat-value">90.8%</span>
-                                            <span class="scan-stat-label">X-Ray</span>
-                                        </div>
-                                        <div class="scan-stat">
-                                            <span class="scan-stat-value">87%</span>
-                                            <span class="scan-stat-label">COVID</span>
-                                        </div>
-                                        <div class="scan-stat">
-                                            <span class="scan-stat-value">88.8%</span>
-                                            <span class="scan-stat-label">Brain</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-badge">🏥 Healthcare AI</div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Medical Image Analysis — AI for Healthcare</h3>
-                        <p class="project-description">
-                            DenseNet121-based deep learning models for <strong>Chest X-ray</strong> classification (90.8% accuracy, 95% recall), 
-                            <strong>COVID-19 scan</strong> detection (87% across 4 classes), and <strong>Brain Tumor MRI</strong> analysis (88.8%). 
-                            Features Grad-CAM interpretability for clinical insights and exports models as .h5 and .pkl for deployment.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">DenseNet121</span>
-                            <span class="tech-tag">Grad-CAM</span>
-                            <span class="tech-tag">Kaggle</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/HritikGodara/Medical_image_analysis" target="_blank" rel="noopener" class="project-link">
-                                <i data-lucide="github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Legal AI NLP -->
-                <div class="project-card reveal">
-                    <div class="project-visual">
-                        <div class="project-preview legal-preview">
-                            <div class="preview-graphic">
-                                <div class="legal-viz">
-                                    <div class="legal-doc">
-                                        <div class="legal-doc-header">
-                                            <i data-lucide="file-text"></i>
-                                            <span>Legal Document</span>
-                                        </div>
-                                        <div class="legal-lines">
-                                            <div class="legal-line"></div>
-                                            <div class="legal-line highlight"></div>
-                                            <div class="legal-line"></div>
-                                            <div class="legal-line highlight"></div>
-                                            <div class="legal-line"></div>
-                                        </div>
-                                    </div>
-                                    <div class="legal-risk-badges">
-                                        <span class="risk-badge safe">✓ Safe</span>
-                                        <span class="risk-badge warning">⚠ Review</span>
-                                        <span class="risk-badge danger">✕ Risky</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-badge">⚖️ Legal AI</div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Legal AI — Document Summarizer & Risk Classifier</h3>
-                        <p class="project-description">
-                            Two ML models for Indian legal documents: one that <strong>summarizes court judgments and contracts</strong> 
-                            in plain language using FLAN-T5, and another that <strong>flags risky clauses</strong> before signing 
-                            using BERT-based classification. Designed to make legal documents accessible and actionable.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">HuggingFace</span>
-                            <span class="tech-tag">FLAN-T5</span>
-                            <span class="tech-tag">BERT</span>
-                            <span class="tech-tag">NLP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/HritikGodara/legal_ai_nlp" target="_blank" rel="noopener" class="project-link">
-                                <i data-lucide="github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 5. CERTIFICATIONS & COURSES ===== -->
-    <section id="certifications" class="section certifications-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="award"></i> Certifications & Courses</span>
-                <h2 class="section-title">Professional <span class="gradient-text">Credentials</span></h2>
-                <p class="section-subtitle">Industry-recognized certifications validating my expertise</p>
-            </div>
-            <div class="cert-grid">
-                <div class="cert-card reveal">
-                    <div class="cert-icon"><i data-lucide="badge-check"></i></div>
-                    <div class="cert-content">
+            <h2 class="list-section-heading reveal">Certifications</h2>
+            <div class="list-rows">
+                <div class="list-row reveal">
+                    <div class="list-row-left">
                         <h3>Oracle Cloud Infrastructure 2025 Certified Data Science Professional</h3>
-                        <p class="cert-meta">
-                            <span><i data-lucide="building"></i> Oracle</span>
-                            <span><i data-lucide="calendar"></i> August 2025</span>
-                        </p>
-                        <p class="cert-desc">Professional-level certification covering data science methodologies, ML model development, and deployment on Oracle Cloud Infrastructure.</p>
+                    </div>
+                    <div class="list-row-right">
+                        <span>Oracle</span><span class="tag-dot">&bull;</span><span>August 2025</span>
                     </div>
                 </div>
-                <div class="cert-card reveal">
-                    <div class="cert-icon"><i data-lucide="badge-check"></i></div>
-                    <div class="cert-content">
+                <div class="list-row reveal">
+                    <div class="list-row-left">
                         <h3>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
-                        <p class="cert-meta">
-                            <span><i data-lucide="building"></i> Oracle</span>
-                            <span><i data-lucide="calendar"></i> August 2025</span>
-                        </p>
-                        <p class="cert-desc">Foundational certification in AI concepts, machine learning fundamentals, and responsible AI practices within cloud environments.</p>
+                    </div>
+                    <div class="list-row-right">
+                        <span>Oracle</span><span class="tag-dot">&bull;</span><span>August 2025</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 6. EXPERIENCE (INTERNSHIPS & WORK) ===== -->
-    <section id="experience" class="section experience-section">
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="briefcase"></i> Experience (Internships & Work)</span>
-                <h2 class="section-title">Professional <span class="gradient-text">Journey</span></h2>
-                <p class="section-subtitle">My professional and academic milestones</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item reveal" data-side="left">
-                    <div class="timeline-dot">
-                        <i data-lucide="graduation-cap"></i>
-                    </div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">Aug 2023 – Present</span>
+            <h2 class="list-section-heading reveal">Experience</h2>
+            <div class="list-rows">
+                <div class="list-row reveal">
+                    <div class="list-row-left">
                         <h3>B.Tech — Computer Science & Engineering</h3>
-                        <h4>Lovely Professional University, Punjab</h4>
-                        <p>Pursuing B.Tech CSE with focus on AI/ML, data structures, and software engineering. Active involvement in research projects and hackathons.</p>
-                        <div class="timeline-tags">
-                            <span>AI/ML</span><span>DSA</span><span>Research</span>
-                        </div>
+                        <p>Lovely Professional University, Punjab</p>
+                    </div>
+                    <div class="list-row-right">
+                        <span>Aug 2023 – Present</span>
                     </div>
                 </div>
-
-                <div class="timeline-item reveal" data-side="right">
-                    <div class="timeline-dot training">
-                        <i data-lucide="code-2"></i>
-                    </div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">June 2025 – July 2025</span>
+                <div class="list-row reveal">
+                    <div class="list-row-left">
                         <h3>Android Developer Pro Internship</h3>
-                        <h4>Lovely Professional University</h4>
-                        <p>Intensive Android development program focused on building real-world apps and publishing on the Google Play Store. End-to-end development including UI design, API integration, debugging, and release management.</p>
-                        <div class="timeline-tags">
-                            <span>Java</span><span>Kotlin</span><span>Firebase</span><span>Android Jetpack</span>
-                        </div>
+                        <p>Lovely Professional University — Java, Kotlin, Firebase, Android Jetpack</p>
+                    </div>
+                    <div class="list-row-right">
+                        <span>Jun 2025 – Jul 2025</span>
                     </div>
                 </div>
-
-                <div class="timeline-item reveal" data-side="left">
-                    <div class="timeline-dot project">
-                        <i data-lucide="rocket"></i>
-                    </div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">January 2026 – Present</span>
+                <div class="list-row reveal">
+                    <div class="list-row-left">
                         <h3>AI/ML Research Projects</h3>
-                        <h4>Independent Research</h4>
-                        <p>Developed AyurVision (99% accuracy ViT plant classifier), Medical Image Analysis pipelines (DenseNet121), and Legal AI NLP systems for Indian court document summarization and clause risk classification.</p>
-                        <div class="timeline-tags">
-                            <span>PyTorch</span><span>TensorFlow</span><span>HuggingFace</span><span>NLP</span>
-                        </div>
+                        <p>Independent — AyurVision, Medical Imaging, Legal AI NLP, RagGPT</p>
                     </div>
-                </div>
-
-                <div class="timeline-item reveal" data-side="right">
-                    <div class="timeline-dot school">
-                        <i data-lucide="school"></i>
-                    </div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">2020 – 2023</span>
-                        <h3>Intermediate & Matriculation</h3>
-                        <h4>M.S.D Spring Bells Public School, Fatehabad, Haryana</h4>
-                        <p>Completed secondary and higher secondary education. Built foundational knowledge in science and mathematics.</p>
+                    <div class="list-row-right">
+                        <span>Jan 2026 – Present</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 7. COMPETITIVE PROGRAMMING & HACKATHONS ===== -->
-    <section id="hackathons" class="section hackathons-section">
+    <!-- ===== HACKATHONS ===== -->
+    <section id="hackathons" class="section section-alt">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="trophy"></i> Competitive Programming & Hackathons</span>
-                <h2 class="section-title">Competitions & <span class="gradient-text">Challenges</span></h2>
-                <p class="section-subtitle">Pushing boundaries through competitive problem solving</p>
-            </div>
-            <div class="hackathon-grid">
-                <div class="hackathon-card reveal">
-                    <div class="hackathon-icon"><i data-lucide="code-2"></i></div>
-                    <div>
+            <h2 class="list-section-heading reveal">Competitions & Hackathons</h2>
+            <div class="list-rows">
+                <div class="list-row reveal">
+                    <div class="list-row-left">
                         <h3>LPU Hackathon Participant</h3>
-                        <p>Active participation in university-level hackathons focused on AI/ML problem statements, building end-to-end solutions under time constraints.</p>
+                    </div>
+                    <div class="list-row-right">
+                        <span>AI/ML</span><span class="tag-dot">&bull;</span><span>End-to-end Solutions</span>
                     </div>
                 </div>
-                <div class="hackathon-card reveal">
-                    <div class="hackathon-icon"><i data-lucide="bar-chart-2"></i></div>
-                    <div>
+                <div class="list-row reveal">
+                    <div class="list-row-left">
                         <h3>Kaggle Competitions</h3>
-                        <p>Participation in Kaggle data science and ML competitions, applying deep learning and feature engineering techniques to real-world datasets.</p>
+                    </div>
+                    <div class="list-row-right">
+                        <span>Deep Learning</span><span class="tag-dot">&bull;</span><span>Feature Engineering</span>
                     </div>
                 </div>
-                <div class="hackathon-card reveal">
-                    <div class="hackathon-icon"><i data-lucide="terminal"></i></div>
-                    <div>
+                <div class="list-row reveal">
+                    <div class="list-row-left">
                         <h3>Competitive Programming</h3>
-                        <p>Practice on platforms like LeetCode and GeeksforGeeks, focusing on data structures, algorithms, and problem-solving skills.</p>
+                    </div>
+                    <div class="list-row-right">
+                        <span>LeetCode</span><span class="tag-dot">&bull;</span><span>GeeksforGeeks</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- ===== 11. CONTACT SECTION ===== -->
-    <section id="contact" class="section contact-section">
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i data-lucide="send"></i> Contact</span>
-                <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
-                <p class="section-subtitle">Have a project in mind or want to collaborate? Let's talk!</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info reveal">
-                    <div class="contact-card">
-                        <i data-lucide="mail"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:hritik.godara114@gmail.com">hritik.godara114@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-card">
-                        <i data-lucide="linkedin"></i>
-                        <div>
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/hritikgbishnoi/" target="_blank" rel="noopener">linkedin.com/in/hritikgbishnoi</a>
-                        </div>
-                    </div>
-                    <div class="contact-card">
-                        <i data-lucide="github"></i>
-                        <div>
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/HritikGodara" target="_blank" rel="noopener">github.com/HritikGodara</a>
-                        </div>
+            <div class="contact-split">
+                <div class="contact-left reveal">
+                    <h2 class="contact-heading">Let's talk.</h2>
+                    <p class="contact-sub">Have a project or need help? Fill out the form, and I'll get back to you.</p>
+                    <div class="contact-socials">
+                        <a href="https://github.com/HritikGodara" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://www.linkedin.com/in/hritikgbishnoi/" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="mailto:hritik.godara114@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
                     </div>
                 </div>
-                <div class="contact-form-wrapper reveal">
+                <div class="contact-right reveal">
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
                             <span class="form-error" id="name-error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
                             <span class="form-error" id="email-error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
-                            <span class="form-error" id="subject-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
                             <span class="form-error" id="message-error"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            <i data-lucide="send"></i>
-                            Send Message
-                        </button>
+                        <button type="submit" class="btn-submit-v2">Send Message</button>
                         <div class="form-success" id="form-success">
                             <i data-lucide="check-circle"></i>
-                            <span>Message sent successfully! I'll get back to you soon.</span>
+                            <span>Message sent! I'll get back to you soon.</span>
                         </div>
                     </form>
                 </div>
@@ -700,44 +478,42 @@
         </div>
     </section>
 
-    <!-- ===== 12. DOWNLOADABLE RESUME ===== -->
-    <section id="resume" class="section resume-section">
+    <!-- ===== RESUME CTA ===== -->
+    <section id="resume" class="section section-alt">
         <div class="container">
-            <div class="resume-cta reveal">
-                <i data-lucide="file-down"></i>
-                <h2>Download My Resume</h2>
-                <p>Get a complete overview of my skills, experience, and projects in PDF format.</p>
-                <a href="PEV_301_CV_v1.pdf" download="Hritik_Godara_Resume.pdf" class="btn btn-primary">
-                    <i data-lucide="download"></i>
-                    Download Resume (PDF)
+            <div class="resume-banner reveal">
+                <h3>Download My Resume</h3>
+                <a href="PEV_301_CV_v1.pdf" download="Hritik_Godara_Resume.pdf" class="btn-download">
+                    <i data-lucide="download"></i> Download PDF
                 </a>
             </div>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-bracket">&lt;</span>Hritik<span class="logo-bracket">/&gt;</span>
-                    <p>Building the future with AI, one model at a time.</p>
-                </div>
-                <div class="footer-links">
+    <footer class="footer-v2">
+        <div class="footer-watermark">HRITIK</div>
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <h2 class="footer-big-text">Engineering<br>Intelligence.</h2>
+            </div>
+            <div class="footer-mid">
+                <span class="footer-label">/Quick Links</span>
+                <div class="footer-pill-links">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <div class="footer-social">
-                    <a href="https://github.com/HritikGodara" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
-                    <a href="https://www.linkedin.com/in/hritikgbishnoi/" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                    <a href="mailto:hritik.godara114@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hritik. Designed with <span class="text-cyan">♥</span> and a lot of <span class="code-font">Python</span>.</p>
+            <div class="footer-right-col">
+                <span class="footer-label">/Contact</span>
+                <a href="mailto:hritik.godara114@gmail.com" class="footer-email">hritik.godara114@gmail.com</a>
             </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 Hritik Godara. Built with rigor and a lot of Python.</p>
         </div>
     </footer>
 
