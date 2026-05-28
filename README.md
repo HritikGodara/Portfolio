@@ -1,51 +1,32 @@
-# Hritik Godara — Portfolio
+# Hritik Godara | AI/ML Engineer Portfolio
 
-Personal portfolio site. Built with vanilla HTML/CSS/JS, no frameworks.
+The source code for my personal portfolio, built to host my machine learning projects, research, and technical resume. 
 
-Live: [portfolio-kohl-three-2h5stxjhct.vercel.app](https://portfolio-kohl-three-2h5stxjhct.vercel.app)
+## The Setup
 
----
+I recently rewrote the site to drop the standard tech portfolio aesthetic. The current version is heavily typographic, using a warm off-white and charcoal palette inspired by print editorials. 
 
-## What's in it
+I avoided heavy frontend frameworks. It's built entirely with vanilla HTML, CSS, and JavaScript. 
+- Layouts use standard CSS Grid and Flexbox.
+- Scroll animations run on `IntersectionObserver` for better performance without scroll jank.
+- Typography pairs Archivo for bold display text with Inter for body copy.
+- The light/dark theme toggle saves directly to `localStorage`.
+- Icons are from [Lucide](https://lucide.dev/).
 
-The site covers the usual portfolio sections — intro, skills, projects, certifications, experience, hackathons, and contact. A few things worth noting:
+## Projects Featured
 
-- Particle canvas background with mouse interaction, built on raw `<canvas>` API
-- Scroll-reveal animations via Intersection Observers (no animation library)
-- A mini accuracy chart in the About section
-- Project cards with embedded visual previews (confusion matrices, accuracy rings)
-- Fully responsive with a slide-in hamburger menu for mobile
+This portfolio highlights my work across deep learning, computer vision, and natural language processing. Some key projects included are:
 
-Dark theme by default. Light mode toggle included.
+- **AyurVision**: A medicinal plant identification system using Vision Transformers (99% validation accuracy).
+- **Medical Image Analysis**: DenseNet121 pipelines for Chest X-ray, COVID-19, and Brain Tumor classification, with Grad-CAM for interpretability.
+- **Legal AI NLP**: Summarizes Indian court judgments using FLAN-T5 and flags contract risk clauses with BERT.
+- **RagGPT**: A grounded RAG pipeline for querying private documents using LangChain and FAISS.
+- **AI Resume Builder**: Matches resumes to job descriptions using contextual embeddings.
+- **Fraud Detection**: Transaction anomaly detection handling class imbalance via SMOTE and XGBoost.
 
----
+## Running it locally
 
-## Projects covered
-
-| Project | What it does |
-|---|---|
-| AyurVision | Vision Transformer classifying 40+ Indian medicinal plant species — 99% validation accuracy, deployed on Hugging Face Spaces |
-| Medical Image Analysis | DenseNet121 pipelines for chest X-ray, COVID-19, and brain tumor MRI classification with Grad-CAM interpretability |
-| Legal AI NLP | FLAN-T5 for summarizing Indian court judgments; BERT for flagging risky contract clauses |
-| RagGPT | RAG pipeline over private documents — chunks, embeds via FAISS, retrieves, and generates cited answers |
-| AI Resume Builder | Resume–JD matching using transformer embeddings and semantic alignment scoring |
-| Fraud Detection | Ensemble ML for transaction anomaly detection with SMOTE for class imbalance |
-| Flashcard Engine | Spaced repetition scheduler with automated deck generation and retention tracking |
-| IDMP Clustering | PCA + K-Means + hierarchical clustering on medicinal plant image features |
-
----
-
-## Stack
-
-- HTML5, CSS3 (custom properties, Flexbox/Grid, keyframe animations)
-- Vanilla JavaScript ES6+ (no framework)
-- [Lucide Icons](https://lucide.dev/) for SVG icons
-
-No build step. No bundler. Open the HTML file and it works.
-
----
-
-## Run locally
+There's no build step or node modules to deal with. Clone the repo, start a basic web server, and you're good.
 
 ```bash
 git clone https://github.com/HritikGodara/Portfolio.git
@@ -53,18 +34,22 @@ cd Portfolio
 python -m http.server 8080
 ```
 
-Visit `http://localhost:8080`.
+Then load `http://localhost:8080` in your browser.
+
+## 🌐 Deployment
+
+This portfolio is static (HTML/CSS/JS) and can be easily deployed to any free hosting service such as:
+* [GitHub Pages](https://pages.github.com/)
+* [Vercel](https://vercel.com/)
+* [Netlify](https://netlify.com/)
+
+Simply connect your repository to the service of your choice and push to the `main` branch.
+
+## 📬 Contact
+
+* **Email:** hritik.godara114@gmail.com
+* **LinkedIn:** [Hritik Bishnoi](https://www.linkedin.com/in/hritikgbishnoi/)
+* **GitHub:** [@HritikGodara](https://github.com/HritikGodara)
 
 ---
-
-## Deploy
-
-Static site. Works on GitHub Pages, Vercel, or Netlify — connect the repo, push to `main`, done.
-
----
-
-## Contact
-
-- Email: hritik.godara114@gmail.com
-- LinkedIn: [hritikgbishnoi](https://www.linkedin.com/in/hritikgbishnoi/)
-- GitHub: [@HritikGodara](https://github.com/HritikGodara)
+*Designed and built with ♥ and a lot of Python.*
