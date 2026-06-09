@@ -8,10 +8,18 @@
     <meta name="keywords" content="AI, ML, Machine Learning, Deep Learning, Portfolio, Hritik Godara, NLP, Computer Vision, Data Science">
     <meta name="author" content="Hritik Godara">
 
+    <meta property="og:title" content="Hritik Godara | AI/ML Engineer">
+    <meta property="og:description" content="Portfolio of Hritik Godara — AI/ML Engineer building deep learning pipelines, computer vision systems, and NLP tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="Portrait/Coloured_version.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="favicon_hg.png">
+    <link rel="preload" as="image" href="Portrait/B%26W_version.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
     <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -27,7 +35,7 @@
 
     <!-- ===== NAV DROPDOWN MODAL ===== -->
     <div class="nav-modal-overlay" id="nav-modal-overlay"></div>
-    <div class="nav-modal" id="nav-modal">
+    <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation Menu">
         <button class="nav-modal-close" id="nav-modal-close" aria-label="Close menu">
             <i data-lucide="x"></i>
         </button>
@@ -51,8 +59,8 @@
 
     <!-- ===== HERO SECTION ===== -->
     <section id="home" class="hero">
-        <div class="hero-deco hero-star">✳</div>
-        <div class="hero-deco hero-bolt">⚡</div>
+        <div class="hero-deco hero-star" aria-hidden="true">✳</div>
+        <div class="hero-deco hero-bolt" aria-hidden="true">⚡</div>
 
         <div class="hero-center">
             <h1 class="hero-title">
@@ -95,8 +103,8 @@
                         legal AI tools that actually read contracts so humans don't have to.
                     </p>
                     <p class="about-text">
-                        Oracle Certified Data Science Professional. Currently shipping projects that sit at the
-                        intersection of healthcare, legal tech, and information retrieval.
+                        Oracle Certified Data Science Professional. I mostly build stuff that bridges healthcare, 
+                        legal tech, and information retrieval.
                     </p>
                 </div>
             </div>
@@ -107,9 +115,9 @@
     <section class="scroll-highlight-section">
         <div class="container">
             <p class="scroll-highlight-text" id="scroll-highlight-text">
-                From data to intelligence. Clean, scalable ML pipelines built to solve healthcare, 
-                security, and document analysis challenges, driven by rigor, structured systems, 
-                and verified model accuracy.
+                I build machine learning pipelines that actually work in the real world. 
+                Whether it's diagnosing X-rays or flagging risky contracts, the goal is always 
+                clean code, verifiable accuracy, and zero AI hype.
             </p>
         </div>
     </section>
@@ -211,7 +219,7 @@
                     </div>
                     <div class="pcard-info">
                         <span class="pcard-label">Medical Image Analysis &bull; Healthcare AI</span>
-                        <p class="pcard-desc">DenseNet121 pipelines for Chest X-ray, COVID-19 scan, and Brain Tumor MRI classification. Grad-CAM interpretability for clinical trust.</p>
+                        <p class="pcard-desc">DenseNet121 pipelines for classifying Chest X-rays, COVID-19 scans, and Brain Tumor MRIs. Uses Grad-CAM so doctors can actually see why the model made a decision.</p>
                         <div class="pcard-tech">
                             <span>TensorFlow</span><span>DenseNet121</span><span>Grad-CAM</span><span>Kaggle</span>
                         </div>
@@ -230,7 +238,7 @@
                     </div>
                     <div class="pcard-info">
                         <span class="pcard-label">Legal AI &bull; NLP</span>
-                        <p class="pcard-desc">Summarizes Indian court judgments in plain language using FLAN-T5. Flags risky clauses in contracts using BERT classification before signing.</p>
+                        <p class="pcard-desc">Translates dense Indian court judgments into plain English using FLAN-T5, and flags dangerous clauses in contracts before anyone signs them.</p>
                         <div class="pcard-tech">
                             <span>HuggingFace</span><span>FLAN-T5</span><span>BERT</span><span>NLP</span>
                         </div>
@@ -249,7 +257,7 @@
                     </div>
                     <div class="pcard-info">
                         <span class="pcard-label">RagGPT &bull; Information Retrieval</span>
-                        <p class="pcard-desc">Retrieval-Augmented Generation pipeline for grounded question answering over private documents. Chunks, embeds, retrieves, and generates answers with source citations.</p>
+                        <p class="pcard-desc">A RAG pipeline that actually cites its sources. It chunks, embeds, and retrieves context from private documents to generate grounded answers without hallucinating.</p>
                         <div class="pcard-tech">
                             <span>LangChain</span><span>OpenAI</span><span>FAISS</span><span>Python</span>
                         </div>
@@ -268,7 +276,7 @@
                     </div>
                     <div class="pcard-info">
                         <span class="pcard-label">AI Resume Builder &bull; NLP</span>
-                        <p class="pcard-desc">Automated resume optimization and job description matching using contextual embeddings and transformer models for semantic alignment scoring.</p>
+                        <p class="pcard-desc">Matches resumes to job descriptions using transformer embeddings, scoring actual semantic alignment instead of relying on broken keyword matching algorithms.</p>
                         <div class="pcard-tech">
                             <span>Python</span><span>Transformers</span><span>Embeddings</span><span>Streamlit</span>
                         </div>
@@ -287,7 +295,7 @@
                     </div>
                     <div class="pcard-info">
                         <span class="pcard-label">Fraud Detection &bull; Security ML</span>
-                        <p class="pcard-desc">Transaction risk profiling and anomaly detection using ensemble ML models. Handles class imbalance with SMOTE and evaluates on precision-recall tradeoffs.</p>
+                        <p class="pcard-desc">Flags fraudulent transactions using ensemble models. Handles heavily imbalanced data with SMOTE, tracking precision-recall rather than misleading accuracy metrics.</p>
                         <div class="pcard-tech">
                             <span>Scikit-learn</span><span>XGBoost</span><span>SMOTE</span><span>Python</span>
                         </div>
@@ -306,7 +314,7 @@
                     </div>
                     <div class="pcard-info">
                         <span class="pcard-label">Flashcard Engine &bull; EdTech</span>
-                        <p class="pcard-desc">Active recall learning engine with spaced repetition scheduling. Automates deck generation and tracks retention curves for optimized study sessions.</p>
+                        <p class="pcard-desc">A study tool that tracks how well you remember things. It uses spaced repetition to schedule flashcards based on your actual retention curve.</p>
                         <div class="pcard-tech">
                             <span>Python</span><span>Flask</span><span>SQLite</span><span>JavaScript</span>
                         </div>
@@ -325,7 +333,7 @@
                     </div>
                     <div class="pcard-info">
                         <span class="pcard-label">IDMP &bull; Unsupervised ML</span>
-                        <p class="pcard-desc">Dimensionality reduction and clustering pipeline for medicinal plant feature analysis. Uses PCA, K-Means, and hierarchical clustering on extracted image features.</p>
+                        <p class="pcard-desc">Groups medicinal plants based on visual features without predefined labels. Uses PCA and K-Means clustering to find hidden patterns in image data.</p>
                         <div class="pcard-tech">
                             <span>Scikit-learn</span><span>PCA</span><span>K-Means</span><span>Matplotlib</span>
                         </div>
@@ -445,15 +453,19 @@
                 </div>
                 <div class="contact-right reveal">
                     <form class="contact-form" id="contact-form">
+                        <input type="hidden" name="access_key" value="eef0d46e-6d3d-495d-ad29-a650c84675f1">
                         <div class="form-group">
+                            <label for="name" class="sr-only">Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your name" required>
                             <span class="form-error" id="name-error"></span>
                         </div>
                         <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
                             <input type="email" id="email" name="email" placeholder="Enter your email" required>
                             <span class="form-error" id="email-error"></span>
                         </div>
                         <div class="form-group">
+                            <label for="message" class="sr-only">Message</label>
                             <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
                             <span class="form-error" id="message-error"></span>
                         </div>

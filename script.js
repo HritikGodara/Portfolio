@@ -23,7 +23,13 @@ function initTheme() {
     const themeSwitch = document.getElementById('theme-switch');
     
     // Check local storage or system preference
-    const savedTheme = localStorage.getItem('theme');
+    let savedTheme = null;
+    try {
+        savedTheme = localStorage.getItem('theme');
+    } catch (e) {
+        // Ignore quota/access errors
+    }
+    
     if (savedTheme) {
         html.setAttribute('data-theme', savedTheme);
     } else {
@@ -32,11 +38,19 @@ function initTheme() {
     }
 
     if (themeSwitch) {
+        const initialTheme = html.getAttribute('data-theme');
+        themeSwitch.setAttribute('aria-label', initialTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+
         themeSwitch.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+            try {
+                localStorage.setItem('theme', newTheme);
+            } catch (e) {
+                // Ignore quota/access errors
+            }
+            themeSwitch.setAttribute('aria-label', newTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
         });
     }
 }
@@ -55,21 +69,32 @@ function initNavModal() {
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
         if (trigger) trigger.setAttribute('aria-expanded', 'true');
+        const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (firstFocusable) firstFocusable.focus();
     }
 
-    function closeModal() {
+    function closeModal(returnFocus = true) {
         modal.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = '';
-        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        if (trigger) {
+            trigger.setAttribute('aria-expanded', 'false');
+            if (returnFocus) trigger.focus();
+        }
     }
 
     if (trigger) trigger.addEventListener('click', openModal);
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    if (overlay) overlay.addEventListener('click', closeModal);
+    if (closeBtn) closeBtn.addEventListener('click', () => closeModal(true));
+    if (overlay) overlay.addEventListener('click', () => closeModal(false));
     
     links.forEach(link => {
-        link.addEventListener('click', closeModal);
+        link.addEventListener('click', () => closeModal(true));
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal(true);
+        }
     });
 }
 
@@ -149,6 +174,7 @@ function initScrollHighlight() {
         }
     });
     handleScroll(); // Trigger once on load
+    window.addEventListener('load', handleScroll); // Recalculate after web fonts finish loading
 }
 
 function initContactForm() {
@@ -157,7 +183,7 @@ function initContactForm() {
 
     let successTimeoutId = null;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         let valid = true;
 
@@ -167,6 +193,7 @@ function initContactForm() {
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const message = document.getElementById('message');
+        const submitBtn = form.querySelector('button[type="submit"]');
 
         if (!name.value.trim()) {
             showError('name-error', 'Please enter your name');
@@ -182,15 +209,34 @@ function initContactForm() {
         }
 
         if (valid) {
-            document.getElementById('form-success').classList.add('visible');
-            form.reset();
-            
-            if (successTimeoutId) {
-                clearTimeout(successTimeoutId);
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: new FormData(form)
+                });
+                
+                if (response.ok) {
+                    document.getElementById('form-success').classList.add('visible');
+                    form.reset();
+                    
+                    if (successTimeoutId) {
+                        clearTimeout(successTimeoutId);
+                    }
+                    successTimeoutId = setTimeout(() => {
+                        document.getElementById('form-success').classList.remove('visible');
+                    }, 5000);
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+            } finally {
+                submitBtn.textContent = 'Send Message';
+                submitBtn.disabled = false;
             }
-            successTimeoutId = setTimeout(() => {
-                document.getElementById('form-success').classList.remove('visible');
-            }, 5000);
         }
     });
 
