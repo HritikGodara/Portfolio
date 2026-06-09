@@ -149,7 +149,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     font-family: var(--font-body); font-weight: 500; transition: var(--transition);
 }
 .theme-switch:hover { background: var(--border); }
-.theme-switch i { width: 18px; height: 18px; }
+.theme-switch i, .theme-switch svg { width: 18px; height: 18px; }
 .icon-moon { display: none; }
 [data-theme="dark"] .icon-sun { display: none; }
 [data-theme="dark"] .icon-moon { display: block; }
@@ -231,7 +231,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .projects-heading { font-family: var(--font-heading); font-size: 3rem; font-weight: 800; letter-spacing: -0.02em; }
 .view-all-link { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 1.1rem; border-bottom: 2px solid var(--accent); padding-bottom: 4px; transition: var(--transition); }
 .view-all-link:hover { opacity: 0.7; }
-.view-all-link i { width: 20px; height: 20px; }
+.view-all-link i, .view-all-link svg { width: 20px; height: 20px; }
 
 .projects-grid-2col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
 
@@ -272,7 +272,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .pcard-icon-grid { display: flex; gap: 20px; margin-bottom: 24px; }
 .pcard-icon-cell { width: 64px; height: 64px; border-radius: 16px; background: rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 [data-theme="dark"] .pcard-icon-cell { background: rgba(0,0,0,0.3); }
-.pcard-icon-cell i { width: 32px; height: 32px; }
+.pcard-icon-cell i, .pcard-icon-cell svg { width: 32px; height: 32px; }
 
 .pcard-stat { font-family: var(--font-mono); font-weight: 600; font-size: 1.1rem; background: rgba(255,255,255,0.6); padding: 8px 16px; border-radius: 50px; }
 [data-theme="dark"] .pcard-stat { background: rgba(0,0,0,0.4); }
@@ -306,7 +306,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .contact-socials { display: flex; gap: 16px; }
 .contact-socials a { width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-primary); transition: var(--transition); }
 .contact-socials a:hover { background: var(--accent); color: var(--accent-inverted); border-color: var(--accent); }
-.contact-socials i { width: 24px; height: 24px; }
+.contact-socials i, .contact-socials svg { width: 24px; height: 24px; }
 
 .contact-form { display: flex; flex-direction: column; gap: 24px; }
 .form-group { position: relative; }
